@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: multi;
+}
+
+.portfolio {
+	margin: 20px auto;
+	width: 70%;
+}
+
+.filters {
+	margin-bottom: 15px;
+}
+
+.filter {
+	margin-right: 5px;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	outline: none;
+	border: 1px solid gray;
+}
+
+.active {
+	background-color: gray;
+	color: #fff;
+}
+
+.project {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.project img {
+  width: 100%;
+}
+
+.projects {
+  column-count: 3;
+}
