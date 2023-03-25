@@ -1,0 +1,28 @@
+.cards {
+  display: flex;
+  align-items: center;
+}
+
+.card-body-stars {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 200px;
+  height: 80px;
+  border: 1px solid #000000;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 1px 3px 5px 0px rgb(187, 35, 80);
+  list-style: none;
+}
+
+.card-body-stars::before {
+  width: 100%;
+  content: 'Film rating';
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-body-stars li {
+  margin-top: 10px;
+}
