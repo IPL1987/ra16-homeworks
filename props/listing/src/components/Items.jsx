@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 export default function Items({ item }) {
   const getPrice = (price, currency) => {
@@ -43,4 +44,10 @@ export default function Items({ item }) {
       </div>
     </div>
   ) : null;
+};
+
+Items.propTypes = {
+  currencyCode: PropTypes.string,
+  price: PropTypes.string,
+  quantity: PropTypes.number,
 };
