@@ -28,8 +28,6 @@ export default function Items({ item }) {
     return title.length > 50 ? `${title.substring(0, 50)}…` : title;
   };
 
-  const quantityClass = `item-quantity level-${getQuantity(item.quantity)}`;
-
   return item.state === "active" ? (
     <div className="item">
       <div className="item-image">
@@ -40,7 +38,7 @@ export default function Items({ item }) {
       <div className="item-details">
         <p className="item-title">{getTitle(item.title)}</p>
         <p className="item-price">{getPrice(item.price, item.currency_code)}</p>
-        <p className={quantityClass}>{`${item.quantity} left`}</p>
+        <p className={"item-quantity " + getQuantity(item.quantity)}>{item.quantity} left</p>
       </div>
     </div>
   ) : null;
