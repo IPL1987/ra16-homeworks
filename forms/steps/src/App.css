@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-weight: 500;
+}
+
+body {
+  font-size: 20px;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #363333;
+}
+
+.walk-counter {
+  margin: 40px auto;
+  width: 500px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form-elem {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.input-description {
+  margin: 10px auto;
+}
+
+.form-input,
+.add-btn {
+  width: 210px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #d8e0e9;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.date-input {
+  background: #d8e0e9;
+}
+
+.table {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+td {
+  padding: 1px;
+  text-align: center;
+}
+
+th {
+  background: rgba(40, 65, 139, 0.8);
+  color: #ffffff;
+}
+
+.delete-btn {
+  border: none;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
