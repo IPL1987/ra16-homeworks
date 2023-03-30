@@ -55,17 +55,18 @@ body {
 
 .table {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #000000;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 td {
-  padding: 1px;
+  padding: 5px;
   text-align: center;
 }
 
 th {
+  padding: 5px;
   background: rgba(40, 65, 139, 0.8);
   color: #ffffff;
 }
