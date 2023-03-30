@@ -43,7 +43,8 @@ export default function StepsForm({ onAdd }) {
         <label className="input-description" htmlFor="distance">
           Пройдено (км.)
         </label>
-        <input
+        <input 
+          placeholder="Добавьте расстояние"
           className="form-input"
           type="number"
           id="distance"
@@ -55,7 +56,7 @@ export default function StepsForm({ onAdd }) {
         />
       </div>
       <button className="btn add-btn" type="submit">
-        OK
+        Oк
       </button>
     </form>
   );
