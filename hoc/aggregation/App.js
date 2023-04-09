@@ -76,7 +76,7 @@ export default class App extends React.Component {
     };
 
     render() {
-        const {list} = this.state;
+        const { list } = this.state;
         return (
             <div id="app">
                 <MonthTable list={list} />
