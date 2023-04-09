@@ -4,8 +4,7 @@ import moment from "moment";
 export default function withFormat(Component, groupBy = false, formatType) {
   return class extends React.Component {
     static get displayName() {
-      const name = Component.displayName ||
-        Component.name || 'Component';
+      const name = Component.displayName || Component.name || 'Component';
       return `WithFormat(${name})`;
     }
 

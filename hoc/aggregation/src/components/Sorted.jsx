@@ -1,5 +1,4 @@
 export default function Sorted(props) {
-  console.log('Sorted', props);
 
   return (
     <div>

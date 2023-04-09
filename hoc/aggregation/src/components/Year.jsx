@@ -1,5 +1,4 @@
 export default function Year(props) {
-  console.log('Year', props);
 
   return (
     <div>

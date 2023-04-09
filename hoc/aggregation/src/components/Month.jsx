@@ -1,5 +1,4 @@
 export default function Month(props) {
-  console.log('Month', props);
 
   return (
     <div>
