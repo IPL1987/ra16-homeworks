@@ -5,8 +5,7 @@ import Popular from "./Popular";
 export default function withWrapper(Component) {
   return class extends React.Component {
     static get displayName() {
-      const name = Component.displayName ||
-        Component.name || 'Component';
+      const name = Component.displayName || Component.name || 'Component';
       return `WithWrapper(${name})`;
     }
 
