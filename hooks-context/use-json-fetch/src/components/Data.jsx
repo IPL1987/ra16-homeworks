@@ -1,4 +1,4 @@
-import useJsonFetch from '../hooks/useJsonFetch';
+import useJsonFetch from '../hooks/userJsonFetch';
 import PropTypes from 'prop-types';
 
 export function Data({ endpoint, title }) {
@@ -6,7 +6,7 @@ export function Data({ endpoint, title }) {
 
   return (
     <div>
-      {title}: {(loading && 'Загрузка...') || (data && data.status) || (error && 'Ошибка!')}
+      {title}: {(loading && 'Loading...') || (data && data.status) || (error && error.status)}
     </div>
   );
 }
