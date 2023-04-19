@@ -1,10 +1,11 @@
 import styled from "styled-components"
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink, useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 const ViewPost = () => {
   const [post, setPost] = useState({})
   const { id } = useParams()
+  let navigate = useNavigate()
   useEffect(() => {
     fetch(`http://localhost:7070/posts/${id}`)
       .then(response => response.json())
@@ -31,7 +32,7 @@ const ViewPost = () => {
               method: "DELETE",
             }).then(data => {
               console.log(data)
-              window.location.href = "/"
+              navigate("/");
             })
           }}
         >

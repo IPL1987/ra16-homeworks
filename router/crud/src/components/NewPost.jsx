@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const NewPost = () => {
+  let navigate = useNavigate()
   const [post, setPost] = useState({
     content: "",
   });
@@ -17,7 +18,7 @@ const NewPost = () => {
     }).then(data => {
       console.log(data);
       setPost({ content: "" });
-      window.location.href = "/"
+      navigate("/");
     });
   };
 

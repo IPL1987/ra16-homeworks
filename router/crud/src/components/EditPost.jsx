@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 const EditPost = () => {
+  let navigate = useNavigate()
   const [post, setPost] = useState({})
   const { id } = useParams()
   useEffect(() => {
@@ -25,7 +26,7 @@ const EditPost = () => {
       body: JSON.stringify(post),
     }).then(data => {
       console.log(data)
-      window.location.href = `/posts/${id}`
+      navigate(`/posts/${id}`)
     })
   }
   return (
