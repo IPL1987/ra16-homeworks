@@ -2,7 +2,7 @@ import useJsonFetch from '../hooks/userJsonFetch';
 import PropTypes from 'prop-types';
 
 export function Data({ endpoint, title }) {
-  const [data, loading, error] = useJsonFetch(`${process.env.REACT_APP_TEST_URL}${endpoint}`);
+  const [data, loading, error] = useJsonFetch(`${'http://localhost:7070/'}${endpoint}`);
 
   return (
     <div>

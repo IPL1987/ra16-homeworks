@@ -8,7 +8,7 @@ export default function List({ selectUser }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.REACT_APP_DATA_URL}users.json`)
+    fetch(`${'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/'}users.json`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);

@@ -10,7 +10,7 @@ export default function Details({ info }) {
     if (info) {
       setError(false);
       setLoading(true);
-      fetch(`${process.env.REACT_APP_DATA_URL}${info.id}.json`)
+      fetch(`${'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/'}${info.id}.json`)
         .then((response) => response.json())
         .then((data) => {
           setUser(data);
