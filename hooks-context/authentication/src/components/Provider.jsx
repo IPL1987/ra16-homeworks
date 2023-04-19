@@ -7,7 +7,7 @@ export default function Provider(props) {
 
   const handleLogin = async ({ login, password }) => {
     try {
-      const responseToken = await fetch(process.env.REACT_APP_AUTH_URL, {
+      const responseToken = await fetch('http://localhost:7070/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login, password }),
@@ -17,7 +17,7 @@ export default function Provider(props) {
       }
       const { token } = await responseToken.json();
 
-      const responseProfile = await fetch(`${process.env.REACT_APP_DATA_URL}me`, {
+      const responseProfile = await fetch(`${'http://localhost:7070/private/'}me`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       if (!responseProfile.ok) {

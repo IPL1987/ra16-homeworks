@@ -6,7 +6,7 @@ import News from './News';
 export default function NewsList() {
   const { token } = useContext(Context);
 
-  const [data, loading] = useJsonFetch(`${process.env.REACT_APP_DATA_URL}news`, {
+  const [data, loading] = useJsonFetch(`${'http://localhost:7070/private/'}news`, {
     headers: { 'Authorization': `Bearer ${token}` },
   });
 
