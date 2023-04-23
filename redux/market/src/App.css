@@ -1,0 +1,114 @@
+.Market {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px auto;
+}
+
+.MarketList {
+  margin-right: 30px;
+}
+
+.MarketList__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.MarketProduct {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 10px;
+}
+
+.MarketProduct__image {
+  position: relative;
+}
+
+.MarketProduct__image img {
+  border-radius: 10px;
+}
+
+.MarketProduct__badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: #ec0000;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.MarketProduct__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.MarketProduct__title {
+  font-weight: bold;
+}
+
+.MarketProduct__link {
+  color: #04b;
+  text-decoration: none;
+}
+
+.MarketProduct__link:hover {
+  color: #c70000;
+}
+
+.MarketProduct__discount {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.MarketForm {
+  width: 400px;
+  border: 2px solid #ffcc00;
+  border-radius: 2px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.MarketForm__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.MarketForm label {
+  margin-bottom: 15px;
+}
+
+.MarketForm__label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.MarketForm__input {
+  width: 100%;
+  border: 1px solid silver;
+  outline: 0px;
+  font-size: 14px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.MarketForm__controls {
+  display: flex;
+  justify-content: space-evenly;
+}
