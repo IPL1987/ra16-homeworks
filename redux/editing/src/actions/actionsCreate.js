@@ -4,6 +4,7 @@ import {
   CLEAR_SERVICE,
   REMOVE_SERVICE,
   CHANGE_SERVICE_FIELD,
+  CHANGE_FILTER_FIELD,
 } from "./actionsType";
 
 export function addService(name, price) {
@@ -24,4 +25,8 @@ export function removeService(id) {
 
 export function changeServiceField(name, value) {
   return { type: CHANGE_SERVICE_FIELD, payload: { name, value } };
+}
+
+export function changeFilterField(value) {
+  return { type: CHANGE_FILTER_FIELD, payload: { value } };
 }
