@@ -1,14 +1,16 @@
-import { Container } from "react-bootstrap";
-import ServiceAdd from "./components/Form/ServiceForm";
-import ServiceList from "./components/List/ServiceList";
-import ServiceFilter from "./components/Filter/ServiceFilter";
+import React from "react";
+import ServiceAdd from "./components/Form/ServiceForm.jsx";
+import ServiceList from "./components/List/ServiceList.jsx";
+import ServiceFilter from "./components/Filter/ServiceFilter.jsx";
 
-export default function App() {
+function App() {
   return (
-    <Container className="App">
+    <>
       <ServiceAdd />
       <ServiceList />
       <ServiceFilter />
-    </Container>
+    </>
   );
 }
+
+export default App;

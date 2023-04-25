@@ -1,39 +1,35 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changeServiceField,
-  addService,
-  clearService,
-} from "../../actions/actionsCreate";
-import { Form, Button } from "react-bootstrap";
+import { addSaveService, changeServiceField, resetFields, resetFilter } from "../../actions/actionsCreate";
 
-export default function ServiceAdd(props) {
-  const item = useSelector((state) => state.serviceAdd);
+export default function ServiceAdd() {
+  const item = useSelector(state => state.serviceAdd);
   const dispatch = useDispatch();
 
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
+  const handleChange = e => {
+    const { name, value } = e.target;
     dispatch(changeServiceField(name, value));
-  };
+  }
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    dispatch(addService(item.name, item.price));
-    dispatch(clearService());
-  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(addSaveService(item));
+    dispatch(resetFields());
+    if (!item.id) {
+      dispatch(resetFilter());
+    }
+  }
 
-  const handleClear = (evt) => {
-    evt.preventDefault();
-    dispatch(clearService());
-  };
+  const handleCancel = e => {
+    dispatch(resetFields());
+  }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="note">
-        <Form.Control name="name" onChange={handleChange} value={item.name} />
-        <Form.Control name="price" onChange={handleChange} value={item.price} />
-        <Button type="submit">Save</Button>
-        <Button onClick={handleClear}>Clear</Button>
-      </Form.Group>
-    </Form>
-  );
+    <form onSubmit={handleSubmit}>
+      <input name="name" onChange={handleChange} value={item.name} />
+      <input name="price" onChange={handleChange} value={item.price} />
+      <button type="submit">Save</button>
+      {item.id && <button onClick={handleCancel}>Cancel</button>}
+    </form>
+  )
 }

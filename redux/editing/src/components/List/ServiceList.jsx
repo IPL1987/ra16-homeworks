@@ -1,49 +1,28 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  removeService,
-  editService,
-  clearService,
-} from "../../actions/actionsCreate";
-import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { editService, removeService, resetFields } from "../../actions/actionsCreate";
 
 export default function ServiceList() {
-  const items = useSelector((state) => state.serviceList);
-  const formState = useSelector((state) => state.serviceAdd);
+  const filter = useSelector(state => state.serviceFilter);
+  const items = useSelector(state => state.serviceList);
   const dispatch = useDispatch();
 
-  const handleRemove = (id) => {
-    if (formState.name === items.find((o) => o.id === id).name) {
-      dispatch(clearService());
-    }
+  const handleRemove = id => {
     dispatch(removeService(id));
+    dispatch(resetFields());
   };
 
-  const handleEdit = (name, price) => {
-    dispatch(editService(name, price));
-  };
+  const handleEdit = item => {
+    dispatch(editService(item));
+  }
 
   return (
     <ul>
-      {items.map((o) => (
-        <li key={o.id}>
-          {o.name} {o.price}
-          <Button
-            variant="outline-success"
-            size="sm"
-            onClick={() => handleEdit(o.name, o.price)}
-          >
-            ✏️
-          </Button>
-          <Button
-            variant="outline-danger"
-            size="sm"
-            onClick={() => handleRemove(o.id)}
-          >
-            🗑
-          </Button>
-        </li>
-      ))}
+      {items.filter(o => o.name.toLowerCase().includes(filter.toLowerCase())).map(o => <li key={o.id}>
+        {o.name} {o.price}
+        <button onClick={() => handleEdit(o)}>Edit</button>
+        <button onClick={() => handleRemove(o.id)}>X</button>
+      </li>)}
     </ul>
   );
 }

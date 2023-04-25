@@ -1,12 +1,9 @@
-import {
-  CHANGE_SERVICE_FIELD,
-  EDIT_SERVICE,
-  CLEAR_SERVICE,
-} from "../actions/actionsType";
+import { CHANGE_SERVICE_FIELD, EDIT_SERVICE, RESET_FIELDS } from "../actions/actionsType";
 
 const initialState = {
-  name: "",
-  price: "",
+  name: '',
+  price: '',
+  id: null
 };
 
 export default function serviceAddReducer(state = initialState, action) {
@@ -14,11 +11,10 @@ export default function serviceAddReducer(state = initialState, action) {
     case CHANGE_SERVICE_FIELD:
       const { name, value } = action.payload;
       return { ...state, [name]: value };
+    case RESET_FIELDS:
+      return { ...initialState };
     case EDIT_SERVICE:
-      const { name2, price } = action.payload;
-      return { name: name2, price: price };
-    case CLEAR_SERVICE:
-      return { name: "", price: "" };
+      return { ...action.payload };
     default:
       return state;
   }

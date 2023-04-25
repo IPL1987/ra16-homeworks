@@ -1,12 +1,13 @@
-import { CHANGE_FILTER_FIELD } from "../actions/actionsType";
+import { CHANGE_FILTER, RESET_FILTER } from "../actions/actionsType";
 
-const initial_state = '';
+const initialState = '';
 
-export default function serviceFilterReducer(state = initial_state, action) {
+export default function serviceFilterReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_FILTER_FIELD:
-      const { value } = action.payload;
-      return value;
+    case CHANGE_FILTER:
+      return action.payload;
+    case RESET_FILTER:
+      return initialState;
     default:
       return state;
   }
