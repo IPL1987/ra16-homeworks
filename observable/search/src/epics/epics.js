@@ -24,7 +24,7 @@ export const changeSearchEpic = (action$) =>
   action$.pipe(
     ofType(CHANGE_SEARCH_FIELD),
     map((o) => o.payload.search.trim()),
-    debounceTime(100),
+    debounceTime(500),
     mergeMap((o) => {
       if (o === "") {
         return of(resetSkills());
