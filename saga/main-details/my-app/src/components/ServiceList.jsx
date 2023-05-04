@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchServicesRequest } from "../actions/actioncCreate";
-import spinner from "../assets/spinner.png";
+import spinner from "../assets/loader.png";
 
 export default function ServiceList() {
   const { items, loading, error } = useSelector((state) => state.serviceList);
