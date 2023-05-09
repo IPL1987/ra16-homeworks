@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getServiceRequest } from "../actions/actioncCreate";
+import { getServiceRequest } from "../actions/actionsCreate";
 import spinner from "../assets/loader.png";
 
 export default function ServiceView({ id }) {

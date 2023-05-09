@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchServicesRequest } from "../actions/actioncCreate";
+import { fetchServicesRequest } from "../actions/actionsCreate";
 import spinner from "../assets/loader.png";
 
 export default function ServiceList() {
@@ -50,7 +50,7 @@ export default function ServiceList() {
           >
             <li className="ServiceList__item">
               <div className="ServiceList__container">
-                {item.name}: {item.price.toLocaleString()} руб.
+                {item.name}: {item.price} руб.
               </div>
             </li>
           </Link>

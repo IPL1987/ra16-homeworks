@@ -4,7 +4,7 @@ import {
   fetchServicesFailure,
   getServiceSuccess,
   getServiceFailure,
-} from "../actions/actioncCreate";
+} from "../actions/actionsCreate";
 import {
   FETCH_SERVICES_REQUEST,
   GET_SERVICE_REQUEST,
