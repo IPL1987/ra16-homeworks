@@ -13,7 +13,7 @@ const initial_state = {
 export default function serviceViewReducer(state = initial_state, action) {
   switch (action.type) {
     case GET_SERVICE_REQUEST:
-      return { ...state, loading: true, error: null };
+      return { ...state, item: null, loading: true, error: null };
     case GET_SERVICE_FAILURE:
       const { error } = action.payload;
       return { ...state, loading: false, error };
