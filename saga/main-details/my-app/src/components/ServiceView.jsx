@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 import { getServiceRequest } from "../actions/actioncCreate";
 import spinner from "../assets/loader.png";
 
-export default function ServiceView({ match }) {
+export default function ServiceView({ id }) {
   const { item, loading, error } = useSelector((state) => state.serviceView);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getServiceRequest(match.params.id));
+    dispatch(getServiceRequest(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleRetry = () => {
-    dispatch(getServiceRequest(match.params.id));
+    dispatch(getServiceRequest(id));
   };
 
   if (loading) {
@@ -46,7 +46,7 @@ export default function ServiceView({ match }) {
           <div className="ServiceView__label">Название</div>
           <div>{item.name}</div>
           <div className="ServiceView__label">Цена </div>
-          <div>{item.price.toLocaleString()} руб.</div>
+          <div>{item.price} руб.</div>
           <div className="ServiceView__label">Описание</div>
           <div>{item.content}</div>
           <Link to="/services" className="ServiceView__link">
