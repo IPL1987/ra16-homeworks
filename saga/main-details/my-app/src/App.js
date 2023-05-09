@@ -11,9 +11,13 @@ function App() {
     <Router>
       <Provider store={store}>
         <Routes>
-        <Route exact path="/services" element={<ServiceList />} />
-          <Route path="/:id/details" element={<ServiceView />} />
-          <Route path="/" element={<Navigate replace to="/services" element={<ServiceList />}  />} />
+        <Route path="/services" element={<ServiceList />} />
+          <Route path="/services/:id/details" element={<ServiceView />} />
+          <Route 
+            path="/" element={
+            <Navigate to="/services"  element={<ServiceList />} />
+            } 
+          />
         </Routes>
       </Provider>
     </Router>
