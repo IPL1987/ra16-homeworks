@@ -1,13 +1,14 @@
 import React from 'react';
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getServiceRequest } from "../actions/actionsCreate";
 import spinner from "../assets/loader.png";
 
-export default function ServiceView({ id }) {
+export default function ServiceView() {
   const { item, loading, error } = useSelector((state) => state.serviceView);
   const dispatch = useDispatch();
+  const {id} = useParams()
 
   useEffect(() => {
     dispatch(getServiceRequest(id));
@@ -43,9 +44,12 @@ export default function ServiceView({ id }) {
     <div className="ServiceView">
       {item && (
         <div>
-          <div className="ServiceView__label">Название: {item.name}</div>
-          <div className="ServiceView__label">Цена: {item.price} руб. </div>
-          <div className="ServiceView__label">Описание: {item.content}</div>
+          <div className="ServiceView__label">Название</div>
+          <div>{item.name}</div>
+          <div className="ServiceView__label">Цена </div>
+          <div>{item.price.toLocaleString()} руб.</div>
+          <div className="ServiceView__label">Описание</div>
+          <div>{item.content}</div>
           <Link to="/services" className="ServiceView__link">
             Назад
           </Link>

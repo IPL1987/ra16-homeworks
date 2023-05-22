@@ -50,7 +50,7 @@ export default function ServiceList() {
           >
             <li className="ServiceList__item">
               <div className="ServiceList__container">
-                {item.name}: {item.price} руб.
+                {item.name}: {item.price.toLocaleString()} руб.
               </div>
             </li>
           </Link>
